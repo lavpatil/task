@@ -1,0 +1,4 @@
+// Scripted pipeline
+def buildNumber = currentBuild.number
+// Declarative pipeline
+echo "Build number is ${currentBuild.number}"
