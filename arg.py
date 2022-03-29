@@ -1,7 +1,5 @@
 import os
 
-print(os.environ['Build JobName'])
-print(os.environ['Build No.'])
-print(os.environ['Build JobTS'])
-print(os.environ['Build JobDuration'])
-print(os.environ['Build Date'])
+print(os.environ['JOB_NAME'])
+print(os.environ['BUILD_NUMBER'])
+print(os.environ['BUILD_TIMESTAMP'])
