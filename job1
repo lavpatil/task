@@ -1,5 +1,13 @@
-pipeline{
-agent any
+pipeline {
+     agent any
+     stages {
 
-    echo "Build number is ${currentBuild.number}"
+     stage ('Build No.')
+     {
+        steps {
+                def buildNumber = currentBuild.number
+                echo "Build number is ${currentBuild.number}"
+               }
+      }
+  }
 }
