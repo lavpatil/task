@@ -35,7 +35,7 @@ pipeline {
      {
         steps {
                 
-               slackSend (channel: '#slack-test', color: 'warning', message: "Current time ${new Date()}")
+               echo "Print= ${currentBuild.durationString.minus(' and counting')}"
               }
       }  
   }
