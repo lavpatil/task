@@ -27,7 +27,7 @@ pipeline {
      {
         steps {
                 
-                echo "TimeStamp: ${currentBuild.startTimeInMillis}/1000"
+                echo "TimeStamp: ${(currentBuild.startTimeInMillis)/1000}"
                }
       }
     stage ('Build JobDuration')
