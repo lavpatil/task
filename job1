@@ -36,6 +36,14 @@ pipeline {
                 
                echo "Print= ${currentBuild.durationString.minus(' and counting')}"
               }
-      } 
+      }
+      stage('Build Date') {
+        steps {
+            script {
+                    def today = new Date()
+                    println "Today: " + today.format("MM/dd/yyyy")
+                } 
+            }
+        }
   }
 }
