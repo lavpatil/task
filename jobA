@@ -21,6 +21,6 @@ pipeline {
             steps {
                 build job: 'job1'
             }
-        }
+        } 
     }
 }
