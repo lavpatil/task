@@ -1,4 +1,6 @@
 import os
-for a in os.environ:
-    print('Var: ', a, 'Value: ', os.getenv(a))
-print("all done")
+
+print(os.environ['JOB_NAME'])
+print(os.environ['BUILD_NUMBER'])
+print(os.environ['BUILD_URL'])
+print(os.environ['BUILD_TAG'])
