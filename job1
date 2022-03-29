@@ -27,7 +27,7 @@ pipeline {
      {
         steps {
                 
-                echo "TimeStamp: ${currentBuild.startTimeInMillis}"
+                echo "TimeStamp: ${currentBuild.startTime}"
                }
       }
   }
