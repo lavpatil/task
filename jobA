@@ -17,9 +17,9 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        stage ('Build jobB'){
+        stage ('Build job1'){
             steps {
-                build job: 'jobB'
+                build job: 'job1'
             }
         }
     }
