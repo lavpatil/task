@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('python'){
         steps {
-            jobB.py
+            'jobB.py'
         }
     }
     }
