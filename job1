@@ -1,6 +1,5 @@
 pipeline {
      agent any
-     options { timestamps () }
      stages {
 
      stage ('Build JobName')
@@ -31,12 +30,19 @@ pipeline {
                 echo "TimeStamp: ${currentBuild.startTimeInMillis}"
                }
       }
-    stage ('Build JobDate')
+    stage ('Build JobDuration')
      {
         steps {
                 
                echo "Print= ${currentBuild.durationString.minus(' and counting')}"
               }
+      }
+    stage ('Build JobTs')
+     {
+        steps {
+                
+                echo "TimeStamp: ${currentBuild.endTimeInMillis}"
+               }
       }  
   }
 }
