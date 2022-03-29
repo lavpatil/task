@@ -23,6 +23,12 @@ pipeline {
                 echo "Job URL is ${JOB_URL}"
                }
       }
-    
+    stage ('Build JobTS')
+     {
+        steps {
+                
+                echo "TimeStamp: ${currentBuild.startTimeInMillis}"
+               }
+      }
   }
 }
