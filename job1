@@ -5,7 +5,7 @@ pipeline {
      stage ('Build No.')
      {
         steps {
-                def buildNumber = currentBuild.number
+                
                 echo "Build number is ${currentBuild.number}"
                }
       }
