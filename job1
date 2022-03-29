@@ -47,7 +47,7 @@ pipeline {
         }
      stage('python') {
        steps{
-             bat 'arg.py'
+             bat 'build.py'
              }
          }    
   }
