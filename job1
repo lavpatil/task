@@ -13,7 +13,7 @@ pipeline {
      {
         steps {
                 
-                echo "Build number is ${currentBuild.number}"
+                echo "Build number is ${JOB_NUMBER}"
                }
       }
   }
