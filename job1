@@ -1,6 +1,5 @@
 pipeline{
 agent any
 
-    def buildNumber = currentBuild.number
     echo "Build number is ${currentBuild.number}"
 }
