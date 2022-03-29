@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('Build jobB'){
             steps {
-                build job: 'jobB', parameters: [string(name: ‘Environment', value: "production")]
+                build job: 'jobB', parameters: [string(name: "Environment", value: "production")]
             }
         }
     }
