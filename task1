@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'build.py'
+            
+                bat 'C:\Users\lavpa\AppData\Local\Programs\Python\Python310\python.exe build.py'
             }
         }
        
