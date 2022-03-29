@@ -1,4 +1,6 @@
-// Scripted pipeline
-def buildNumber = currentBuild.number
-// Declarative pipeline
-echo "Build number is ${currentBuild.number}"
+pipeline{
+agent any
+
+    def buildNumber = currentBuild.number
+    echo "Build number is ${currentBuild.number}"
+}
