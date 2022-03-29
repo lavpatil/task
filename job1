@@ -34,7 +34,7 @@ pipeline {
      {
         steps {
                 
-                echo "BUILD_DATE= ${date +%F-%T}"
+                echo "BUILD_DATE= ${date}"
                }
       }  
   }
