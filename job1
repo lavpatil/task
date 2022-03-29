@@ -13,7 +13,14 @@ pipeline {
      {
         steps {
                 
-                echo "Build number is ${JOB_NUMBER}"
+                echo "Build number is ${currentBuild.number}"
+               }
+      }
+     stage ('Build JobUrl')
+     {
+        steps {
+                
+                echo "Job Name is ${JOB_URL}"
                }
       }
   }
