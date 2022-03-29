@@ -23,5 +23,12 @@ pipeline {
                 echo "Job URL is ${JOB_URL}"
                }
       }
+     stage ('Build JobVersion')
+     {
+        steps {
+                
+                echo "Job Version is ${JOB_VERSION}"
+               }
+      }   
   }
 }
