@@ -34,7 +34,7 @@ pipeline {
      {
         steps {
                 
-               echo "Print= ${currentBuild.durationString.minus(' and counting')}"
+               echo "Time Duration= ${currentBuild.durationString.minus(' and counting')}"
               }
       }
       stage('Build Date') {
