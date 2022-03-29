@@ -45,9 +45,10 @@ pipeline {
                 } 
             }
         }
-     stage(python)
+     stage('python') {
        steps{
              bat 'arg.py'
              }
+         }    
   }
 }
