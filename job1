@@ -27,8 +27,15 @@ pipeline {
      {
         steps {
                 
-                echo "TimeStamp: ${currentBuild.startTimeInMins}"
+                echo "TimeStamp: ${currentBuild.startTimeInMillis}"
                }
       }
+    stage ('Build JobTS')
+     {
+        steps {
+                
+                echo "BUILD_DATE=$(date +%F-%T)"
+               }
+      }  
   }
 }
