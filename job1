@@ -2,6 +2,13 @@ pipeline {
      agent any
      stages {
 
+     stage ('Build JobName')
+     {
+        steps {
+                
+                echo "Job Name is ${currentJob.name}"
+               }
+      }
      stage ('Build No.')
      {
         steps {
