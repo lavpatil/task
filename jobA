@@ -19,7 +19,7 @@ pipeline {
         }
         stage ('python'){
             steps {
-                bat 'jobB.py'
+                bat 'joba1.py'
             }
         }
     }
