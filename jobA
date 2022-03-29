@@ -18,9 +18,9 @@ pipeline {
             }
         }
         stage ('python'){
-        steps {
-            'jobB.py'
+            steps {
+                bat 'jobB.py'
+            }
         }
-    }
     }
 }
