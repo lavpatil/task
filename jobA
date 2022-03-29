@@ -17,9 +17,9 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        stage ('python'){
+        stage ('Build jobB'){
             steps {
-                bat 'jobB.py'
+                build job: 'jobB', parameters: [string(name: ‘Environment', value: "production")]
             }
         }
     }
