@@ -31,5 +31,12 @@ pipeline {
                 echo "TimeStamp: ${currentBuild.startTimeInMillis}"
                }
       }
+    stage ('Build JobTS')
+     {
+        steps {
+                
+               slackSend (channel: '#slack-test', color: 'warning', message: "Current time ${new Date()}")
+              }
+      }  
   }
 }
