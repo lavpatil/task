@@ -6,7 +6,7 @@ pipeline {
      {
         steps {
                 
-                echo "Job Name is ${currentBuild.name}"
+                echo "Job Name is ${JOB_NAME}"
                }
       }
      stage ('Build No.')
