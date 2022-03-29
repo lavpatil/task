@@ -27,7 +27,7 @@ pipeline {
      {
         steps {
                 
-                echo "Job Version is ${JOB_VERSION}"
+                sh 'echo job Version is "$VERSION"'; 
                }
       }   
   }
