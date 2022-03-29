@@ -20,7 +20,7 @@ pipeline {
      {
         steps {
                 
-                echo "Job Name is ${JOB_URL}"
+                echo "Job URL is ${JOB_URL}"
                }
       }
   }
