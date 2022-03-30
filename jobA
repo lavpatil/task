@@ -17,6 +17,11 @@ pipeline {
             steps {
                 echo 'Deploy code'
             }
-        }  
+        }
+        stage('Build Number') {
+            steps {
+                echo "Build Number is  ${currentBuild.number},Job Duration ${currentBuild.durationString.minus(' and counting')}"
+            }
+        }
      }
 }
