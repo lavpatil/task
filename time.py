@@ -1,10 +1,4 @@
-def calculateDuration(start, end): {
-    long= elapsedTime = end - start
-
-    Long second = (elapsedTime / 1000).longValue() % 60;
-    Long minute = (elapsedTime / (1000 * 60)).longValue() % 60;
-    Long hour = (elapsedTime / (1000 * 60 * 60)).longValue() % 24;
-    Long remainderMillis = elapsedTime % 1000
-
-    return "${hour}h ${minute}m ${second}s ${remainderMillis}ms"
-}
+http://localhost:8080/job/jobA/100/buildNumber
+http://localhost:8080/job/jobA/100/buildTimestamp
+http://jenkins:8080/job/JOB_NAME/lastBuild/buildNumber
+http://jenkins:8080/job/JOB_NAME/lastBuild/api/json?tree=builds%5Bnumber,status,timestamp,id,result%5D
