@@ -21,5 +21,7 @@ pipeline {
         stage('End') {
             steps {
                     echo "end= ${previousBuild.timestamps ()}"
+                  }
+            }      
      }
 }
