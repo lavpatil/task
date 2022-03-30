@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Get time of previous build') {
             steps {
-                    echo "currentBuild.rawBuild.getPreviousBuild().getTimestamp()"
+                    echo "print= ${currentBuild.rawBuild.getPreviousBuild().getTimestamp()}"
                    }    
             }
       }
