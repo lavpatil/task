@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Time') {
              steps{ 
-                    echo "Build <a href=\'${BUILD_URL}\'>${JOB_DISPLAY_NAME} #${BUILD_NUMBER}</a> has been built. Took ${BUILD_DURATION}. See the <a href=\'${BUILD_URL}"
+                    echo "Build <a href=\'${BUILD_URL}\'> #${BUILD_NUMBER}</a> has been built. Took ${BUILD_DURATION}. See the <a href=\'${BUILD_URL}"
             }
          }
      }
