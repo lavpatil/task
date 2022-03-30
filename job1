@@ -18,12 +18,6 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        post 
-        {
-           always {
-               printFinishedStageDurations()
-        }
-    }
      stage ('Build JobName')
      {
         steps {
@@ -61,3 +55,9 @@ pipeline {
          }    
   }
 }
+ post 
+        {
+           always {
+               printFinishedStageDurations()
+        }
+    }
