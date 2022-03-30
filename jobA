@@ -25,8 +25,7 @@ pipeline {
         }
         stage('Time') {
              steps{ 
-                    echo "Build <a href=\'${BUILD_URL}\'> #${BUILD_NUMBER}</a> has been built. Took ${BUILD_DURATION}. See the <a href=\'${BUILD_URL}"
-            }
+                 echo "Took ${Util.getTimeSpanString(System.currentTimeMillis() - currentBuild.startTimeInMillis)}"            }
          }
      }
 }
