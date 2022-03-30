@@ -17,7 +17,7 @@ for job in job_list:
 
     with contextlib.closing(
         urlopen(
-            "http://localhost:8080/job/{job_name}/api/json?tree=allBuilds[result]".format(
+            "http://localhost:8080/job/jobA/lastBuild/wfapi/describe".format(
                 job_name=quote(job["name"])
             )
         )
