@@ -1,4 +1,3 @@
-import hudson.Util;
 pipeline {
     agent any
     options { timestamps ()}
@@ -17,11 +16,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploy code ${currentBuild.durationString.minus(' and counting')}"
-            }
-        }
-        stage('Build Number') {
-            steps {
-                echo "Build Number is  ${currentBuild.number},Job Duration ${currentBuild.durationString.minus(' and counting')}"
             }
         }
         stage('python') {
