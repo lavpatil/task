@@ -18,6 +18,12 @@ pipeline {
                 echo 'Deploy code'
             }
         }
+        post 
+        {
+           always {
+               printFinishedStageDurations()
+        }
+    }
      stage ('Build JobName')
      {
         steps {
