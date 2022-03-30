@@ -17,10 +17,5 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        stage ('Build job1'){
-            steps {
-                build job: 'job1'
-            }
-        } 
     }
 }
