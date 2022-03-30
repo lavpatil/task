@@ -23,7 +23,7 @@ pipeline {
                 script {
                     def duration = currentBuild.previousBuild.duration;
                     print duration;
-                    python -c"import datetime;print datetime.timedelta(milliseconds=duration);"
+                    python -c{"import datetime;print datetime.timedelta(milliseconds=duration)};"
                 }
             }    
         }
