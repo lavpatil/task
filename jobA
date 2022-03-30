@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build code'
+                echo '${(currentBuild.startTimeInMillis)/1000} Build code'
             }
         }
         stage('Test') {
             steps {
-                echo 'test code'
+                echo '${(currentBuild.startTimeInMillis)/1000} test code'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploy code'
+                echo '${(currentBuild.startTimeInMillis)/1000} Deploy code'
             }
         }
     }
