@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    options { timestamps (start)}
+    options { timestamps ()}
 
     stages {
         stage('Build') {
@@ -18,13 +18,7 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        stage('Get time of previous build') {
-            steps {
-                    script {
-                    def duration = currentBuild.previousBuild.duration;
-                    print duration;
-                }
-             }    
-         }
      }
+     options { timestamps ()}
+
 }
