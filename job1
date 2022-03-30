@@ -1,8 +1,23 @@
 pipeline {
      agent any
-     stages {
-     
+     options { timestamps ()}
 
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build code'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'test code'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy code'
+            }
+        }
      stage ('Build JobName')
      {
         steps {
