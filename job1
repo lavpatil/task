@@ -1,6 +1,7 @@
 pipeline {
      agent any
      stages {
+     
 
      stage ('Build JobName')
      {
@@ -23,20 +24,7 @@ pipeline {
                 echo "Job URL is ${JOB_URL}"
                }
       }
-    stage ('Build JobTS')
-     {
-        steps {
-                
-                echo "TimeStamp: ${(currentBuild.startTimeInMillis)/1000}"
-               }
-      }
-    stage ('Build JobDuration')
-     {
-        steps {
-                
-               echo "Time Duration= ${currentBuild.durationString.minus(' and counting')}"
-              }
-      }
+    
       stage('Build Date') {
         steps {
             script {
