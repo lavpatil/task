@@ -23,10 +23,11 @@ pipeline {
                 echo "Build Number is  ${currentBuild.number},Job Duration ${currentBuild.durationString.minus(' and counting')}"
             }
         }
-        stage('python') {
-            steps {
-                   bat 'C:\\Users\\lavpa\\AppData\\Local\\Programs\\Python\\Python310\\python.exe time.py'
-           }
-        }
+        post {
+             success {
+                    hipchatSend color: 'GREEN', room: 'My room', failOnError: true, notify: false, 
+                    message: 'Build <a href=\'${BUILD_URL}\'>${JOB_DISPLAY_NAME} #${BUILD_NUMBER}</a> has been built. Took ${BUILD_DURATION}. See the <a href=\'${BUILD_URL}/console\'>output</a>.'
+            }
+         }
      }
 }
