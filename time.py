@@ -1,4 +1,4 @@
-def calculateDuration(start, end); {
+def calculateDuration(start, end): {
     long elapsedTime = end - start
 
     Long second = (elapsedTime / 1000).longValue() % 60;
