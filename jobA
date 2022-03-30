@@ -17,11 +17,6 @@ pipeline {
             steps {
                 echo 'Deploy code'
             }
-        }
-        stage('End') {
-            steps {
-                    echo "end= ${previousBuild.timestamps ()}"
-                  }
-            }      
+        }  
      }
 }
