@@ -1,5 +1,5 @@
 def calculateDuration(start, end): {
-    long elapsedTime = end - start
+    Long elapsedTime = end - start
 
     Long second = (elapsedTime / 1000).longValue() % 60;
     Long minute = (elapsedTime / (1000 * 60)).longValue() % 60;
