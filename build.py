@@ -1,6 +1,7 @@
-import os
-print(os.environ['JOB_NAME'])
-print(os.environ['BUILD_NUMBER'])
-print(os.environ['BUILD_URL'])
-print(os.environ['BUILD_TAG'])
-print(os.environ['BUILD_ID'])
+import hudson.plugins.timestamper.api.TimestamperAPI;
+import java.io.BufferedReader;
+
+String query = "time=HH:mm:ss";
+try (BufferedReader reader = TimestamperAPI.get().read(build, query)) {
+    // read timestamps here
+}
