@@ -1,5 +1,4 @@
 pipeline {
-...
 
 environment {
         EMAIL_TO = 'someone@host.com'
