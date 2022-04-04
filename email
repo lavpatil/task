@@ -12,7 +12,7 @@ pipeline {
         always {
             mail to:'lavpatil2015@gmail.com',
             subject:"Hi This Is First Jenkins",
-            body:"hi hi good"
+            body:"Job Name is ${JOB_NAME}"
             
         }
     }
