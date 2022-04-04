@@ -12,9 +12,9 @@ pipeline {
         always {
             mail to:'lavpatil2015@gmail.com',
             subject:"Hi This Is First Jenkins",
-            body:"Job Name is ${JOB_NAME}, 
-            Build number is ${currentBuild.number}, 
-            Job URL is ${JOB_URL}"
+            body:"Job Name is ${JOB_NAME}"
+            body:"Build number is ${currentBuild.number}" 
+            body:"Job URL is ${JOB_URL}"
             
         }
     }
