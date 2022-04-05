@@ -6,7 +6,7 @@ gmail_password = 'nokia@2021'
 sent_from = gmail_user
 to = ['lavpatil2015@gmail.com']
 subject = 'this first jenkins'
-body = "job name is ${JOB_NAME}"
+body = 'table.py'
 
 
 email_text = """\
