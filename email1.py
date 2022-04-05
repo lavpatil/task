@@ -15,7 +15,7 @@ This is an e-mail message to be sent in HTML format
 """
 
 try:
-   smtpObj = smtplib.SMTP('192.168.114.16')
+   smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.sendmail(sender, receivers, message)         
    print ("Successfully sent email")
 except SMTPException:
