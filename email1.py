@@ -1,4 +1,5 @@
 import smtplib
+import codecs
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
@@ -26,3 +27,6 @@ try:
     print ("Email sent successfully!")
 except Exception as ex:
     print ("Something went wrong….",ex)
+    
+f=codecs.open("table.html", 'r')
+print f.read()
