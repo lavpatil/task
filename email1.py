@@ -18,13 +18,13 @@ Subject: SMTP HTML e-mail test
 <html>
    <head>
       <style>
-      var { 
-           Job name: ${JOB_NAME};
-       }
          table, th, td {
             border: 1px solid black;
          }
       </style>
+      var { 
+           Job name: ${JOB_NAME};
+       }
    </head>
    <body>
       <h2>JOB Details</h2>
