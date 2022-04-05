@@ -17,6 +17,11 @@ Subject: SMTP HTML e-mail test
 <!DOCTYPE html>
 <html>
    <head>
+   <body>
+<div style="padding-left: 30px; padding-bottom: 15px;" color="blue"> <font color="navy" size="5"> <b> ''' + "${SERVICE_NAME}" + ''' </b> </font> <br>
+<b> Build </b> #''' + "${BUILD_NUMBER}" + '''<br>
+</body>
+</html>'''
       <style>
          table, th, td {
             border: 1px solid black;
