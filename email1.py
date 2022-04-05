@@ -14,27 +14,31 @@ MIME-Version: 1.0
 Content-type: text/html
 Subject: SMTP HTML e-mail test
 
-This is an e-mail message to be sent in HTML format
-
-<b>This is HTML message.</b>
-<h1>This is headline.</h1>
-<style>
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
          table, th, td {
             border: 1px solid black;
          }
       </style>
-<table>
-  <tr>
-    <th>Job Name</th>
-    <th>Build Number</th>
-    <th>Job URL</th>
-  </tr>
-  <tr>
-    <td>${JOB_NAME}</td>
-    <td>${currentBuild.number}</td>
-    <td>${JOB_URL}</td>
-  </tr>
-</table>
+   </head>
+   <body>
+      <h1>JOB Details</h1>
+      <table>
+         <tr>
+            <th>Job Name</th>
+            <th>Build Number</td>
+            <th>Job URL</td>
+         </tr>
+         <tr>
+            <td>Lav</th>
+            <td>1223</td>
+            <td>deeee</td>
+         </tr>
+      </table>
+   </body>
+</html>
 """
 
 try:
