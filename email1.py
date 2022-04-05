@@ -18,6 +18,19 @@ This is an e-mail message to be sent in HTML format
 
 <b>This is HTML message.</b>
 <h1>This is headline.</h1>
+
+table>
+  <tr>
+    <th>Job Name</th>
+    <th>Build Number</th>
+    <th>Job URL</th>
+  </tr>
+  <tr>
+    <td>${JOB_NAME}</td>
+    <td>${currentBuild.number}</td>
+    <td>${JOB_URL}</td>
+  </tr>
+</table>
 """
 
 try:
