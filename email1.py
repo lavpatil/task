@@ -2,6 +2,9 @@
 
 import smtplib
 
+ var data1 = "${JOB_NAME}";
+ var data2 = "${JOB_URL}";
+
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
 
@@ -32,9 +35,9 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td> <var>${JOB_NAME}</var> </th>
+            <td>${JOB_NAME}</th>
             <td>1223</td>
-            <td>deeee</td>
+            <td>${JOB_URL}</td>
          </tr>
       </table>
    </body>
