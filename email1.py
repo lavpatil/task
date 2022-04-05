@@ -17,6 +17,6 @@ This is an e-mail message to be sent in HTML format
 try:
    smtpObj = smtplib.SMTP('192.168.114.16')
    smtpObj.sendmail(sender, receivers, message)         
-   print "Successfully sent email"
+   print ("Successfully sent email")
 except SMTPException:
-   print "Error: unable to send email"
+   print ("Error: unable to send email")
