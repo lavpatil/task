@@ -1,15 +1,27 @@
 import smtplib
 
-sender = 'lavpatil2015@gmail.com'
-receivers = ['lavpatil2015@gmail.com']
+gmail_user = 'lavpatil2015@gmail.com'
+gmail_password = 'nokia@2021'
 
-message = """From: From Person <lavpatil2015@gmail.com>
-To: To Person <lavpatil2015@gmail.com>
-Subject: SMTP e-mail test
+sent_from = gmail_user
+to = ['lavpatil2015@gmail.com']
+subject = 'this first jenkins'
+body = 'consectetur adipiscing elit'
 
-This is a test e-mail message.
-"""
-smtpObj = smtplib.SMTP('http://localhost:8080/')
-smtpObj.sendmail(sender, receivers, message)         
-print ("Successfully sent email")
+email_text = """\
+From: %s
+To: %s
+Subject: %s
 
+%s
+""" % (sent_from, ", ".join(to), subject, body)
+
+try:
+    smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    smtp_server.ehlo()
+    smtp_server.login(gmail_user, gmail_password)
+    smtp_server.sendmail(sent_from, to, email_text)
+    smtp_server.close()
+    print ("Email sent successfully!")
+except Exception as ex:
+    print ("Something went wrong….",ex)
