@@ -18,8 +18,12 @@ This is an e-mail message to be sent in HTML format
 
 <b>This is HTML message.</b>
 <h1>This is headline.</h1>
-
-table>
+<style>
+         table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+<table>
   <tr>
     <th>Job Name</th>
     <th>Build Number</th>
