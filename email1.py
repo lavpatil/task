@@ -10,7 +10,7 @@ Subject: SMTP e-mail test
 This is a test e-mail message.
 """
 
-   smtpObj = smtplib.SMTP('localhost')
+   smtpObj = smtplib.SMTP('8080')
    smtpObj.sendmail(sender, receivers, message)         
    print "Successfully sent email"
 
