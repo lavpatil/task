@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'C:\\Users\\lavpa\\AppData\\Local\\Programs\\Python\\Python310\\python.exe email1.py'
-'
             }
         }
      }
