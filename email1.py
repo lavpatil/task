@@ -2,6 +2,9 @@
 
 import smtplib
 
+gmail_user = 'lavpatil2015@gmail.com'
+gmail_password = 'nokia@2021'
+
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
@@ -19,6 +22,7 @@ This is an e-mail message to be sent in HTML format
 
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+   smtpObj.login(gmail_user, gmail_password)
    smtpObj.sendmail(sender, receivers, message)         
    print ("Successfully sent email")
 except Exception as ex:
