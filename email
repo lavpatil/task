@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Ok') {
             steps {
-                bat 'table.html'
+                echo'ok'
             }
         }
     }
