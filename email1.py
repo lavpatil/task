@@ -32,7 +32,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td> <var>${env.JOB_NAME}</var> </th>
+            <td> <var>${JOB_NAME}</var> </th>
             <td>1223</td>
             <td>deeee</td>
          </tr>
