@@ -2,8 +2,8 @@
 
 import smtplib
 
- var data1 = "${JOB_NAME}";
- var data2 = "${JOB_URL}";
+var data1 = "${JOB_NAME}";
+var data2 = "${JOB_URL}";
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
