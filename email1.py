@@ -22,9 +22,6 @@ Subject: SMTP HTML e-mail test
             border: 1px solid black;
          }
       </style>
-      var { 
-           Job name: ${JOB_NAME};
-       }
    </head>
    <body>
       <h2>JOB Details</h2>
@@ -35,7 +32,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>"${JOB_NAME}"</th>
+            <td><b> Build </b> #''' + "${BUILD_NUMBER}" + '''</th>
             <td>1223</td>
             <td>${JOB_URL}</td>
          </tr>
