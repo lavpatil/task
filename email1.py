@@ -2,9 +2,6 @@
 
 import smtplib
 
-var data1 = "{${JOB_NAME}}";
-var data2 = "{${JOB_URL}}";
-
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
 
@@ -21,6 +18,9 @@ Subject: SMTP HTML e-mail test
 <html>
    <head>
       <style>
+      var { 
+           Job name: ${JOB_NAME};
+       }
          table, th, td {
             border: 1px solid black;
          }
@@ -35,7 +35,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>${JOB_NAME}</th>
+            <td>"${JOB_NAME}"</th>
             <td>1223</td>
             <td>${JOB_URL}</td>
          </tr>
