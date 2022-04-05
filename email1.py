@@ -24,7 +24,7 @@ Subject: SMTP HTML e-mail test
       </style>
    </head>
    <body>
-      <h1>JOB Details</h1>
+      <h2>JOB Details</h2>
       <table>
          <tr>
             <th>Job Name</th>
