@@ -8,6 +8,16 @@ to = ['lavpatil2015@gmail.com']
 subject = 'this first jenkins'
 body = "job name is ${JOB_NAME}"
 
+html = """<HTML>
+<body>
+    <h1>Attendance list</h1>
+    <table>
+        {0}
+    </table>
+</body>
+</HTML>"""
+
+
 email_text = """\
 From: %s
 To: %s
