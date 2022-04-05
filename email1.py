@@ -2,6 +2,8 @@
 
 import smtplib
 
+def jobName = "${JOB_NAME}"
+
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
 
@@ -17,11 +19,6 @@ Subject: SMTP HTML e-mail test
 <!DOCTYPE html>
 <html>
    <head>
-   <body>
-<div style="padding-left: 30px; padding-bottom: 15px;" color="blue"> <font color="navy" size="5"> <b> ''' + "${SERVICE_NAME}" + ''' </b> </font> <br>
-<b> Build </b> #''' + "${BUILD_NUMBER}" + '''<br>
-</body>
-</html>'''
       <style>
          table, th, td {
             border: 1px solid black;
@@ -37,7 +34,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td><b> Build </b> #''' + "${BUILD_NUMBER}" + '''</th>
+            <td>${JOB_NAME}</td>
             <td>1223</td>
             <td>${JOB_URL}</td>
          </tr>
