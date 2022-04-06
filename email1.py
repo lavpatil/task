@@ -1,8 +1,7 @@
 #!/usr/bin/python
 
 import smtplib
-
-def jobName = "${JOB_NAME}"
+import os
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
@@ -15,32 +14,8 @@ To: To Person <lavpatil2015@gmail.com>
 MIME-Version: 1.0
 Content-type: text/html
 Subject: SMTP HTML e-mail test
+os.system("ema.bat ")
 
-<!DOCTYPE html>
-<html>
-   <head>
-      <style>
-         table, th, td {
-            border: 1px solid black;
-         }
-      </style>
-   </head>
-   <body>
-      <h2>JOB Details</h2>
-      <table>
-         <tr>
-            <th>Job Name</th>
-            <th>Build Number</td>
-            <th>Job URL</td>
-         </tr>
-         <tr>
-            <td>${JOB_NAME}</td>
-            <td>1223</td>
-            <td>${JOB_URL}</td>
-         </tr>
-      </table>
-   </body>
-</html>
 """
 
 try:
