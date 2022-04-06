@@ -18,7 +18,7 @@ os.system("ema.bat ")
 
 """
 a = subprocess.check_output("ema.bat")
-print a
+print (a)
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
