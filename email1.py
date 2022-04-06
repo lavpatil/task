@@ -17,7 +17,7 @@ Subject: SMTP HTML e-mail test
 os.system("ema.bat ")
 
 """
-
+os.system("ema.bat ")
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
