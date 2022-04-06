@@ -14,11 +14,35 @@ To: To Person <lavpatil2015@gmail.com>
 MIME-Version: 1.0
 Content-type: text/html
 Subject: SMTP HTML e-mail test
-os.system("ema.bat ")
 
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+   </head>
+   <body>
+      <h2>JOB Details</h2>
+      <table>
+         <tr>
+            <th>Job Name</th>
+            <th>Build Number</td>
+            <th>Job URL</td>
+         </tr>
+         <tr>
+            <td>${JOB_NAME}</td>
+            <td>1223</td>
+            <td>${JOB_URL}</td>
+         </tr>
+      </table>
+   </body>
+</html>
 """
-a = subprocess.check_output("ema.bat")
-print (a)
+"""
+
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
