@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import smtplib
-import os
+import subprocess
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
@@ -17,7 +17,8 @@ Subject: SMTP HTML e-mail test
 os.system("ema.bat ")
 
 """
-os.system("ema.bat ")
+a = subprocess.check_output("ema.bat")
+print a
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
