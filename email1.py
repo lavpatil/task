@@ -41,7 +41,6 @@ Subject: SMTP HTML e-mail test
    </body>
 </html>
 """
-"""
 
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
