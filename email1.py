@@ -2,6 +2,7 @@
 
 import smtplib
 import os
+import sys
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
@@ -52,6 +53,8 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
+   print 'Number of arguments:', len(sys.argv), 'arguments.'
+   print 'Argument List:', str(sys.argv)
 except Exception as ex:
    print ("Error: unable to send email",ex)
 
