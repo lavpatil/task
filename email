@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'C:\\Users\\lavpa\\AppData\\Local\\Programs\\Python\\Python310\\python.exe email1.py arg1 arg2 arg3'
+                bat 'C:\\Users\\lavpa\\AppData\\Local\\Programs\\Python\\Python310\\python.exe email1.py 'JOB_NAME' 'BUILD_NUMBER' 'JOB_URL''
             }
         }
      }
