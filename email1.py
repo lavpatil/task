@@ -47,6 +47,9 @@ try:
    smtpObj.login(gmail_user, gmail_password)
    smtpObj.sendmail(sender, receivers, message)         
    print ("Successfully sent email")
+   print(os.environ['JOB_NAME'])
+   print(os.environ['BUILD_NUMBER'])
+   print(os.environ['BUILD_URL'])
 except Exception as ex:
    print ("Error: unable to send email",ex)
 
