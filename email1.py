@@ -53,7 +53,7 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
-   print ('Number of arguments:', len(sys.argv), 'arguments.')
+   print ('Number of arguments:', len('JOB_NAME','BUILD_NUMBER','JOB_URL'), 'arguments.')
    print ('Argument List:', str(sys.argv))
 except Exception as ex:
    print ("Error: unable to send email",ex)
