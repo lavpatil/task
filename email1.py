@@ -14,7 +14,10 @@ var1 = os.environ['JOB_NAME']
 var2 = os.environ['BUILD_NUMBER']
 var3 = os.environ['JOB_URL']
 
-html = """
+body = """From: From Person <lavpatil2015@gmail.com>
+To: To Person <lavpatil2015@gmail.com>
+Content-type: text/html
+Subject: SMTP HTML e-mail test
 <!DOCTYPE html>
 <html>
    <head>
@@ -33,8 +36,8 @@ html = """
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>var1</td>
-            <td>var2</td>
+            <td>os.environ['JOB_NAME']</td>
+            <td>(os.environ['BUILD_NUMBER'])</td>
             <td>var3</td>
          </tr>
       </table>
@@ -45,7 +48,7 @@ html = """
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, html)         
+   smtpObj.sendmail(sender, receivers, body)         
    print ("Successfully sent email")
 except Exception as ex:
    print ("Error: unable to send email",ex)
