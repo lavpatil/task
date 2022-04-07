@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import smtplib
-import subprocess
+import os
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
