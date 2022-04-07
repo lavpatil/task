@@ -1,13 +1,16 @@
 #!/usr/bin/python
 
 import smtplib
-import subprocess
 
 gmail_user = 'lavpatil2015@gmail.com'
 gmail_password = 'nokia@2021'
 
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
+
+var1 = os.environ['JOB_NAME']
+var2 = os.environ['BUILD_NUMBER']
+var3 = os.environ['JOB_URL']
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
@@ -33,9 +36,9 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>'${JOB_NAME}'</td>
-            <td>1223</td>
-            <td>${JOB_URL}</td>
+            <td>var1</td>
+            <td>var2</td>
+            <td>var3</td>
          </tr>
       </table>
    </body>
