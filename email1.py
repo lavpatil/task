@@ -10,7 +10,7 @@ sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
 jn= os.environ['JOB_NAME']
-jb= os.environ['BUIL_NUMBER']
+jb= os.environ['BUILD_NUMBER']
 ju= os.environ['JOB_URL']
 
 message = """From: From Person <lavpatil2015@gmail.com>
