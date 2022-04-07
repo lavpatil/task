@@ -35,7 +35,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>var1</td>
+            <td>{var1}</td>
             <td>{BUILD_NUMBER}</td>
             <td>{JOB_URL}</td>
          </tr>
