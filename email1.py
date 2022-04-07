@@ -36,7 +36,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>var1</td>
+            <td><param name="var1" value="true"></td>
             <td>{BUILD_NUMBER}</td>
             <td>{JOB_URL}</td>
          </tr>
@@ -55,8 +55,6 @@ try:
    print(os.environ['BUILD_URL'])
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv))
-   for x in range(len(len)):
-    print (len[x])
 except Exception as ex:
    print ("Error: unable to send email",ex)
 
