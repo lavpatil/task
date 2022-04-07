@@ -35,7 +35,7 @@ Subject: SMTP HTML e-mail test
          <tr>
             <td>$[JOB_NAME]</td>
             <td>$['BUILD_NUMBER']</td>
-            <td>[$JOB_URL]</td>
+            <td>[JOB_URL]</td>
          </tr>
       </table>
    </body>
