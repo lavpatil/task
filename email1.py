@@ -17,30 +17,44 @@ body = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
 Content-type: text/html
 Subject: SMTP HTML e-mail test
-<!DOCTYPE html>
 <html>
-   <head>
-      <style>
-         table, th, td {
-            border: 1px solid black;
-         }
-      </style>
-   </head>
-   <body>
-      <h2>JOB Details</h2>
-      <table>
-         <tr>
-            <th>Job Name</th>
-            <th>Build Number</td>
-            <th>Job URL</td>
-         </tr>
-         <tr>
-            <td>$JOB_NAME</td>
-            <td> +BUILD_NUMBER</td>
-            <td>var3</td>
-         </tr>
-      </table>
-   </body>
+<p style="color : black ; font-size : 11px;">Hi All,</p>
+<head>
+<style>
+table {
+font-family: arial, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+td, th, td {
+border: 1px solid black;
+text-align: left;
+padding: 8px;
+}
+tr:nth-child(even) {
+background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2>Jobs Performed</h2>
+<table>
+<tr>
+<th>Job Name</th>
+<th>Build Number</th>
+<th>Build URL</th>
+</tr>
+<tr>
+<td>${JOB_NAME}</td>
+<td>${BUILD_NUMBER}</td>
+<td>${BUILD_URL}</td>
+</tr>
+</tr>
+</table>
+<p>Note:-</p>
+<p style="color : black ; font-size : 11px;">*This is auto generated mail kindly do not reply.</p>
+<p style="color : black ; font-size : 11px;">*For any build query contact CI-Team@kpit.com.</p>
+</body>
 </html>
 """
 
