@@ -37,7 +37,7 @@ Subject: SMTP HTML e-mail test
          </tr>
          <tr>
             <td>JOB_NAME</td>
-            <td>'BUILD_NUMBER'</td>
+            '<td>' +BUILD_NUMBER+ '</td>'
             <td>var3</td>
          </tr>
       </table>
