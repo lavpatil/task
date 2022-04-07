@@ -36,8 +36,8 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>JOB_NAME</td>
-            '<td>' +BUILD_NUMBER+ '</td>'
+            <td>$JOB_NAME</td>
+            <td> +BUILD_NUMBER</td>
             <td>var3</td>
          </tr>
       </table>
