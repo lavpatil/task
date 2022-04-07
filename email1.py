@@ -9,6 +9,10 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
+var jn= os.environ['JOB_NAME']
+def jb= os.environ['BUIL_NUMBER']
+def ju= os.environ['JOB_URL']
+
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
 MIME-Version: 1.0
@@ -33,9 +37,9 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>$[JOB_NAME]</td>
-            <td>$['BUILD_NUMBER']</td>
-            <td>[JOB_URL]</td>
+            <td>jn</td>
+            <td>jb</td>
+            '<td>' +ju+ '</td>'
          </tr>
       </table>
    </body>
