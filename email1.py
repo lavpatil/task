@@ -9,7 +9,7 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-var jn= os.environ['JOB_NAME']
+def jn= os.environ['JOB_NAME']
 def jb= os.environ['BUIL_NUMBER']
 def ju= os.environ['JOB_URL']
 
