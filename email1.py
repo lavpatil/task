@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from cgitb import html
 import smtplib
 import os
 
@@ -50,5 +49,7 @@ try:
    smtpObj.login(gmail_user, gmail_password)
    smtpObj.sendmail(sender, receivers, body)         
    print ("Successfully sent email")
+   print(os.environ['JOB_NAME'])
+   print(os.environ['BUILD_NUMBER'])
 except Exception as ex:
    print ("Error: unable to send email",ex)
