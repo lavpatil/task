@@ -1,1 +1,29 @@
+pipeline {
+     agent any
+     options { timestamps ()}
 
+    stages {
+     stage ('Build JobName')
+     {
+        steps {
+                
+                echo "Job Name is ${JOB_NAME}"
+               }
+      }
+     stage ('Build No.')
+     {
+        steps {
+                
+                echo "Build number is ${currentBuild.number}"
+               }
+      }
+     stage ('Build JobUrl')
+     {
+        steps {
+                
+                echo "Job URL is ${JOB_URL}"
+               }
+      }
+       
+  }
+}
