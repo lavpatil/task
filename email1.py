@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from cgitb import html
 import smtplib
 import os
 
@@ -13,12 +14,7 @@ var1 = os.environ['JOB_NAME']
 var2 = os.environ['BUILD_NUMBER']
 var3 = os.environ['JOB_URL']
 
-message = """From: From Person <lavpatil2015@gmail.com>
-To: To Person <lavpatil2015@gmail.com>
-MIME-Version: 1.0
-Content-type: text/html
-Subject: SMTP HTML e-mail test
-
+html = """
 <!DOCTYPE html>
 <html>
    <head>
@@ -49,7 +45,7 @@ Subject: SMTP HTML e-mail test
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, message)         
+   smtpObj.sendmail(sender, receivers, html)         
    print ("Successfully sent email")
 except Exception as ex:
    print ("Error: unable to send email",ex)
