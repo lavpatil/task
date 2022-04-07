@@ -56,7 +56,7 @@ try:
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv))
    for x in range(len(len)):
-    print len[x],
+    print (len[x])
 except Exception as ex:
    print ("Error: unable to send email",ex)
 
