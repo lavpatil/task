@@ -9,9 +9,9 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-def jn= os.environ['JOB_NAME']
-def jb= os.environ['BUIL_NUMBER']
-def ju= os.environ['JOB_URL']
+jn= os.environ['JOB_NAME']
+jb= os.environ['BUIL_NUMBER']
+ju= os.environ['JOB_URL']
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
