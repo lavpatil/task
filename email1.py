@@ -9,6 +9,7 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
+var1 = os.environ['JOB_NAME']
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
@@ -34,7 +35,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>os.environ.get{JOB_NAME}</td>
+            <td>var1</td>
             <td>{BUILD_NUMBER}</td>
             <td>{JOB_URL}</td>
          </tr>
