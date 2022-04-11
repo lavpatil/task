@@ -2,21 +2,17 @@
 
 from cgitb import html
 from email import message
-import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib, ssl
+import pandas as pd
 import os
 import sys
-
-gmail_user = 'lavpatil2015@gmail.com'
-gmail_password = 'nokia@2021'
-
-sender = 'lavpatil2015@gmail.com'
-receivers = ['lavpatil2015@gmail.com']
-
 
 
 
 def func(JOB_NAME, BUILD_NUMBER, BUILD_URL):
-   message= '''
+   html= '''
 <!DOCTYPE html>
 <html>
    <head>
@@ -43,20 +39,28 @@ def func(JOB_NAME, BUILD_NUMBER, BUILD_URL):
    </body>
 </html>
         '''.format(JOB_NAME=JOB_NAME, BUILD_NUMBER=BUILD_NUMBER, BUILD_URL=BUILD_URL)
-   return message
+   return html
 
-try:
-   
-   smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-   smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, str(message))         
-   print ("Successfully sent email")
-   print(os.environ['JOB_NAME'])
-   print(os.environ['BUILD_NUMBER'])
-   print(os.environ['BUILD_URL'])
-   print ('Number of arguments:', len(sys.argv), 'arguments.')
-   print ('Argument List:', str(sys.argv[1]))
-   print ('Argument List:', str(sys.argv[2]))
-   print ('Argument List:', str(sys.argv[3]))
-except Exception as ex:
-   print ("Error: unable to send email",ex)
+email_from = 'lavpatil2015@gmail.com'
+password = 'nokia@2021'
+email_to = 'lavpatil2015@gmail.com'
+
+
+date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
+
+
+email_message = MIMEMultipart()
+email_message['From'] = email_from
+email_message['To'] = email_to
+email_message['Subject'] = f'Report email - {date_str}'
+
+
+email_message.attach(MIMEText(html, "html"))
+
+email_string = email_message.as_string()
+
+
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+   server.login(email_from, password)
+   server.sendmail(email_from, email_to, email_string)
