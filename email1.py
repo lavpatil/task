@@ -10,7 +10,7 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-jobname = $'JOB_NAME'
+jobname = 'os.environ['JOB_NAME']'
 jobnu = 'BUILD_NUMBER'
 joburl = 'JOB_URL'
 
