@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+from cgitb import html
+from email import message
 import smtplib
 import os
 import sys
@@ -10,13 +12,11 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-jobname = os.environ['JOB_NAME']
-jobnu = 'BUILD_NUMBER'
-joburl = 'JOB_URL'
 
 
-def func(Job_Namem, Build_Number, Build_Url):
-   html = '''
+
+def func(JOB_NAME, BUILD_NUMBER, BUILD_URL):
+   message= '''
 <!DOCTYPE html>
 <html>
    <head>
@@ -42,13 +42,14 @@ def func(Job_Namem, Build_Number, Build_Url):
       </table>
    </body>
 </html>
-'''.format(Job_Name=Job_name, Build_Number=Build_Number=Build_Number, Build_Url=Build_Url)
-return html
+        '''.format(JOB_NAME=JOB_NAME, BUILD_NUMBER=BUILD_NUMBER, BUILD_URL=BUILD_URL)
+   return message
 
 try:
+   
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, html)         
+   smtpObj.sendmail(sender, receivers, message)         
    print ("Successfully sent email")
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
@@ -59,4 +60,3 @@ try:
    print ('Argument List:', str(sys.argv[3]))
 except Exception as ex:
    print ("Error: unable to send email",ex)
-
