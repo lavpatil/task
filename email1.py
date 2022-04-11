@@ -15,12 +15,8 @@ jobnu = 'BUILD_NUMBER'
 joburl = 'JOB_URL'
 
 
-message = """From: From Person <lavpatil2015@gmail.com>
-To: To Person <lavpatil2015@gmail.com>
-MIME-Version: 1.0
-Content-type: text/html
-Subject: SMTP HTML e-mail test
-
+def func(Job_Namem, Build_Number, Build_Url):
+   html = '''
 <!DOCTYPE html>
 <html>
    <head>
@@ -46,13 +42,13 @@ Subject: SMTP HTML e-mail test
       </table>
    </body>
 </html>
-""".format(Project_Name=Project_name, Build_Number=Build_Number=Build_Number, Build_Url=Build_Url)
+'''.format(Job_Name=Job_name, Build_Number=Build_Number=Build_Number, Build_Url=Build_Url)
 return html
 
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, message)         
+   smtpObj.sendmail(sender, receivers, html)         
    print ("Successfully sent email")
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
