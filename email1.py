@@ -36,7 +36,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>{var1.JOB_NAME}</td>
+            <td>string.format('JOB_NAME')</td>
             <td>${result.BUILD_NUMBER}</td>
             <td>{${result.BUILD_NUMBER}}</td>
          </tr>
@@ -53,7 +53,7 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
-   print(txt.format(pirice = JOB_NAME))
+   print(txt.format(pirice = 'JOB_NAME'))
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv[1]))
    print ('Argument List:', str(sys.argv[2]))
