@@ -10,7 +10,11 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-str = os.environ['JOB_NAME']
+jobname = 'JOB_NAME'
+jobnu = 'BUILD_NUMBER'
+joburl = 'JOB_URL'
+
+string1 = '{}'.format(jobname)
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
@@ -36,7 +40,7 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>str.format{"a "}</td>
+            <td>string1</td>
             <td>${result.BUILD_NUMBER}</td>
             <td>{${result.BUILD_NUMBER}}</td>
          </tr>
@@ -53,7 +57,7 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
-   print(str.format("a "))
+   print(string1)
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv[1]))
    print ('Argument List:', str(sys.argv[2]))
