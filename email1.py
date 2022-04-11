@@ -36,9 +36,9 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>{result.BUILD_NUMBER}</td>
-            <td>{BUILD_NUMBER}</td>
-            <td>{JOB_URL}</td>
+            <td>(${result.JOB_NAME})</td>
+            <td>${result.BUILD_NUMBER}</td>
+            <td>{${result.BUILD_NUMBER}}</td>
          </tr>
       </table>
    </body>
