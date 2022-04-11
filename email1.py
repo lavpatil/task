@@ -14,7 +14,6 @@ jobname = os.environ['JOB_NAME']
 jobnu = 'BUILD_NUMBER'
 joburl = 'JOB_URL'
 
-string1 = '{}'.format(jobname)
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
@@ -40,14 +39,15 @@ Subject: SMTP HTML e-mail test
             <th>Job URL</td>
          </tr>
          <tr>
-            <td>{{string1}}</td>
-            <td>${result.BUILD_NUMBER}</td>
-            <td>{${result.BUILD_NUMBER}}</td>
+            <td>{JOB_NAME}</td>
+            <td>{BUILD_NUMBER}</td>
+            <td>{BUILD_URL}</td>
          </tr>
       </table>
    </body>
 </html>
-"""
+""".format(Project_Name=Project_name, Build_Number=Build_Number=Build_Number, Build_Url=Build_Url)
+return html
 
 try:
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
@@ -57,7 +57,6 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
-   print(string1)
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv[1]))
    print ('Argument List:', str(sys.argv[2]))
