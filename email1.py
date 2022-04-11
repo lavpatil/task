@@ -10,7 +10,7 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-var1 = os.environ['JOB_NAME']
+txt = "{jobname:.Job_NAME}"
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
@@ -53,6 +53,7 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
+   prnt(txt.format(pirice = 'JOB_NAME'))
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv[1]))
    print ('Argument List:', str(sys.argv[2]))
