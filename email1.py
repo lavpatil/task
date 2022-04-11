@@ -10,7 +10,7 @@ gmail_password = 'nokia@2021'
 sender = 'lavpatil2015@gmail.com'
 receivers = ['lavpatil2015@gmail.com']
 
-txt = "{jobname:Job_NAME}"
+txt = {jobname:'Job_NAME'}
 
 message = """From: From Person <lavpatil2015@gmail.com>
 To: To Person <lavpatil2015@gmail.com>
