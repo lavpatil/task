@@ -49,7 +49,7 @@ try:
    
    smtpObj = smtplib.SMTP_SSL('smtp.gmail.com', 465)
    smtpObj.login(gmail_user, gmail_password)
-   smtpObj.sendmail(sender, receivers, message)         
+   smtpObj.sendmail(sender, receivers, str(message))         
    print ("Successfully sent email")
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
