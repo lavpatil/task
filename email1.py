@@ -53,6 +53,7 @@ try:
    print(os.environ['JOB_NAME'])
    print(os.environ['BUILD_NUMBER'])
    print(os.environ['BUILD_URL'])
+   print(str.format{"a "})
    print ('Number of arguments:', len(sys.argv), 'arguments.')
    print ('Argument List:', str(sys.argv[1]))
    print ('Argument List:', str(sys.argv[2]))
