@@ -59,8 +59,13 @@ email_message.attach(MIMEText(html, "html"))
 
 email_string = email_message.as_string()
 
-
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
    server.login(email_from, password)
    server.sendmail(email_from, email_to, email_string)
+   print ("Successfully sent email")
+   print ('Number of arguments:', len(sys.argv), 'arguments.')
+   print ('Argument List:', str(sys.argv[1]))
+   print ('Argument List:', str(sys.argv[2]))
+   print ('Argument List:', str(sys.argv[3]))
+
