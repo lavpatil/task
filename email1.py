@@ -57,7 +57,7 @@ email_message['Subject'] = f'Report email - {date_str}'
 
 email_message.attach(MIMEText(html, "html"))
 
-email_string = email_message.as_string()
+email_string = email_message.as_string().encode('UTF-8').decode('ascii')
 
 context = ssl.create_default_context()
 with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
