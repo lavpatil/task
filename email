@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'email1.py'
+                bat 'C:\Users\lavpa\AppData\Local\Programs\Python\Python310\email1.py'
             }
         }
      }
