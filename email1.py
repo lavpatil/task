@@ -1,71 +1,70 @@
 #!/usr/bin/python
-
 from cgitb import html
-from email import message
+import smtplib
+import ssl
+from email import encoders, message
+from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import smtplib, ssl
-import pandas as pd
-import os
-import sys
+from jenkinsapi.jenkins import Jenkins
 
 
 
-def func(JOB_NAME, BUILD_NUMBER, BUILD_URL):
+def func(JOB_STATUS, BUILD_NUMBER, BUILD_URL):
    html= '''
-<!DOCTYPE html>
-<html>
-   <head>
-      <style>
-         table, th, td {
-            border: 1px solid black;
-         }
-      </style>
-   </head>
-   <body>
-      <h2>JOB Details</h2>
-      <table>
-         <tr>
-            <th>Job Name</th>
-            <th>Build Number</td>
-            <th>Job URL</td>
-         </tr>
-         <tr>
-            <td>{JOB_NAME}</td>
-            <td>{BUILD_NUMBER}</td>
-            <td>{BUILD_URL}</td>
-         </tr>
-      </table>
-   </body>
-</html>
-        '''.format(JOB_NAME=JOB_NAME, BUILD_NUMBER=BUILD_NUMBER, BUILD_URL=BUILD_URL)
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <style>
+            table, th, td {{
+               border: 1px solid black;
+            }}
+         </style>
+      </head>
+      <body>
+         <h2>JOB Details</h2>
+         <table>
+            <tr>
+               <th>Job Status</th>
+               <th>Build Number</td>
+               <th>Job URL</td>
+            </tr>
+            <tr>
+               <td>{JOB_STATUS}</td>
+               <td>{BUILD_NUMBER}</td>
+               <td>{BUILD_URL}</td>
+            </tr>
+         </table>
+      </body>
+   </html>
+   '''.format(JOB_STATUS=JOB_STATUS, BUILD_NUMBER=BUILD_NUMBER, BUILD_URL=BUILD_URL)
    return html
 
-email_from = 'lavpatil2015@gmail.com'
-password = 'nokia@2021'
-email_to = 'lavpatil2015@gmail.com'
 
+def emai():
+   J = Jenkins('http://localhost:8080', 'lav', 'nokia@2021')
+   job = J['email']
+   lgb = job.get_last_build()
+   BUILD_URL = lgb.get_build_url()
+   BUILD_NUMBER = lgb.get_number()
+   JOB_STATUS = lgb.get_status()
+   sender_email = "lavpatil2015@gmail.com"
+   receiver_email = "lavpatil2015@gmail.com"
+   password = "nokia@2021"
+   
+   
+   msg = MIMEMultipart("alternative")
+   msg["Subject"] = "Build Details"
+   msg["From"] = sender_email
+   msg["To"] = receiver_email
+   html=func(JOB_STATUS, BUILD_NUMBER, BUILD_URL)
+   message=MIMEText(html,'html')
+   msg.attach(message)
+   
+   context = ssl.create_default_context()
+   with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+      server.login(sender_email, password)
+      server.sendmail(sender_email, receiver_email, msg.as_string())
+      print ("Successfully sent email")
 
-date_str = pd.Timestamp.today().strftime('%Y-%m-%d')
-
-
-email_message = MIMEMultipart()
-email_message['From'] = email_from
-email_message['To'] = email_to
-email_message['Subject'] = f'Report email - {date_str}'
-
-
-email_message.attach(MIMEText(html, "html"))
-
-email_string = email_message.as_string().encode('UTF-8').decode('us-ascii')
-
-context = ssl.create_default_context()
-with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-   server.login(email_from, password)
-   server.sendmail(email_from, email_to, email_string)
-   print ("Successfully sent email")
-   print ('Number of arguments:', len(sys.argv), 'arguments.')
-   print ('Argument List:', str(sys.argv[1]))
-   print ('Argument List:', str(sys.argv[2]))
-   print ('Argument List:', str(sys.argv[3]))
-
+emai()
