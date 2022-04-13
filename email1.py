@@ -42,7 +42,7 @@ def func(JOB_STATUS, BUILD_NUMBER, BUILD_URL):
 
 
 def emai():
-   J = Jenkins('http://localhost:9090', 'lav', 'Nokia@2021')
+   J = Jenkins('http://localhost:8080', 'lav', 'nokia@2021')
    job = J['email']
    lgb = job.get_last_build()
    BUILD_URL = lgb.get_build_url()
