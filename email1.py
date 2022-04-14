@@ -2,8 +2,7 @@
 from cgitb import html
 import smtplib
 import ssl
-from email import encoders, message
-from email.mime.base import MIMEBase
+
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from jenkinsapi.jenkins import Jenkins
