@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from cgitb import html
+from cgitb import html;
 import smtplib
 import ssl
 
