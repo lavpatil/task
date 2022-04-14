@@ -17,8 +17,8 @@ pipeline {
                 echo 'Deploy code'
             }
         }
-        stage('Post Build') {
-            steps {
+        post {
+           success {
                 bat 'C:\\Users\\lavpa\\AppData\\Local\\Programs\\Python\\Python310\\python.exe email1.py'
             }
         }
