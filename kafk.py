@@ -2,13 +2,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
-res = requests.get('http://localhost:9090/, ',auth = HTTPBasicAuth('lav', 'Nokia@2021'))
+res = requests.get("http://localhost:9090/job/jenk1/6/wfapi",auth = HTTPBasicAuth('lav', 'Nokia@2021'))
 
 
-info = server.get_job_info('job-name')
-# Loop over builds
-builds = info['builds']
-for build in builds:
-    for build in builds:
-        print(server.get_build_info('job-name', 
-                                    build['number']))
+print(res.text)
