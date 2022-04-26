@@ -21,13 +21,14 @@ def d_json():
     job_name=data['name']
     job_id=data['id']
     job_status=data['status']
+    job_duration=data['durationMillis']//1000
     starttime=datetime.fromtimestamp(data['startTimeMillis']//1000).isoformat()
     endtime=datetime.fromtimestamp(data['endTimeMillis']//1000).isoformat()
 
-    job_details = {"job_name":job_name,"job_id":job_id,"job_status":job_status,"starttime":starttime,"endtime":endtime}
+    job_details = {"job_name":job_name,"job_id":job_id,"job_status":job_status,"job_duration":job_duration,"starttime":starttime,"endtime":endtime}
     return(job_details)
 
-jo=d_json()
+jo=d_json()        
 print(jo)
 
 
