@@ -9,20 +9,20 @@ from requests.auth
 import HTTPBasicAuth
 
 
-#res = requests.get("http://localhost:9090/job/jenk1/wfapi",auth = HTTPBasicAuth('lav', 'Nokia@2021'))
+
 resu = requests.get("http://localhost:9090/job/jenk1/9/wfapi",auth = HTTPBasicAuth('lav', 'Nokia@2021'))
 
-#print(type(res.text))
+
 j_object=json.loads(resu.text)
-#j_object2=json.loads(res.text)
+
 
 with open('dat.json', 'w') as f:
     json.dump(j_object, f)
- #   json.dump(j_object2, f)    
+ 
 
 f=open('dat.json')
 data=json.load(f)
-#data1=json.load(f)
+
 
 print ('Number of arguments:', len(sys.argv), 'arguments.')
 print ('Argument List:', str(sys.argv[1])  ) 
