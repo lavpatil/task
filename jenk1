@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                bat 'kafk.py'
+                bat 'kafk.py job_name'
             }
         }
     }
