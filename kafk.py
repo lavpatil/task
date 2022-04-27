@@ -5,7 +5,8 @@ import sys
 from datetime 
 import datetime
 import requests
-from requests.auth import HTTPBasicAuth
+from requests.auth 
+import HTTPBasicAuth
 
 
 #res = requests.get("http://localhost:9090/job/jenk1/wfapi",auth = HTTPBasicAuth('lav', 'Nokia@2021'))
