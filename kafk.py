@@ -2,7 +2,8 @@ import json
 import datetime
 import os
 import sys
-from datetime import datetime
+from datetime 
+import datetime
 import requests
 from requests.auth import HTTPBasicAuth
 
