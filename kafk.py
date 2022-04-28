@@ -30,7 +30,7 @@ print ('Argument List:', str(sys.argv[1])  )
 job_name = (sys.argv)(os.environ['JOB_NAME'])
 print(job_name)
 
-def d_json():
+def d_json()
     job_name=data['name']
     job_id=data['id']
     job_status=data['status']
@@ -43,7 +43,7 @@ def d_json():
 jo=d_json()
 print(jo)    
 
-def stage():
+def stage()
  for key in data['stages'][1:]:
     stagename=key['name']
     stageid=key['id']
