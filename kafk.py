@@ -18,6 +18,7 @@ j_object=json.loads(resu.text)
 
 with open('dat.json', 'w') as f:
     json.dump(j_object, f)
+    f.close()
  
 
 f=open('dat.json')
