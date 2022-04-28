@@ -27,8 +27,8 @@ data=json.load(f)
 print ('Number of arguments:', len(sys.argv), 'arguments.')
 print ('Argument List:', str(sys.argv[1])  ) 
 
-job_name = (sys.argv)(os.environ['JOB_NAME'])
-print(job_name)
+jenk1 = (sys.argv)(os.environ['JOB_NAME'])
+print(jenk1)
 
 def d_json()
     job_name=data['name']
