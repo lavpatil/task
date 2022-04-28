@@ -16,7 +16,7 @@ resu = requests.get("http://localhost:9090/job/jenk1/9/wfapi",auth = HTTPBasicAu
 j_object=json.loads(resu.text)
 
 
-with open('dat.json', 'w') as f:
+with open('dat.json', 'w') as f
     json.dump(j_object, f)
  
 
