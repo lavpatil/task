@@ -16,7 +16,7 @@ resu = requests.get("http://localhost:9090/job/jenk1/9/wfapi",auth = HTTPBasicAu
 j_object=json.loads(resu.text)
 
 
-with open('dat.json', 'w') as f
+with open('dat.json', 'w') as f:
     json.dump(j_object, f)
  
 
@@ -27,10 +27,10 @@ data=json.load(f)
 print ('Number of arguments:', len(sys.argv), 'arguments.')
 print ('Argument List:', str(sys.argv[1])  ) 
 
-jenk1 = (sys.argv)(os.environ['JOB_NAME'])
+jenk1 = (sys.argv,os.environ['JOB_NAME'])
 print(jenk1)
 
-def d_json()
+def d_json():
     job_name=data['name']
     job_id=data['id']
     job_status=data['status']
@@ -42,7 +42,7 @@ def d_json()
 jo=d_json()
 print(jo)    
 
-def stage()
+def stage():
  for key in data['stages'][1:]:
     stagename=key['name']
     stageid=key['id']
